@@ -1,0 +1,21 @@
+(function() {
+				$.fn.extend({
+					drag: function() {
+						var _this = this;
+						var disX = 0;
+						var disY = 0;
+						this.mousedown(function(evt) {
+							disX = evt.pageX - $(_this).offset().left;
+							disY = evt.pageY - $(_this).offset().top;
+							$(document).mousemove(function(ev) {
+								_this.css('left', ev.pageX - disX);
+								_this.css('top', ev.pageY - disY);
+							})
+							$(document).mouseup(function() {
+								$(_this).off();
+							})
+							return false;
+						})
+					}
+				})
+			})
