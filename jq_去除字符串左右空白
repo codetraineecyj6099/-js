@@ -1,0 +1,13 @@
+(function() {
+				$.fn.extend({
+					leftTrim: function(str) {
+						return str.replace(/^\s+/, '');
+					},
+					rightTrim: function(str) {
+						return str.replace(/\s+$/, '');
+					},
+					printHello: function() {
+						alert("hello world");
+					}
+				})
+			})(jQuery);
